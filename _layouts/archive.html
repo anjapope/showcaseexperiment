@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+<article class="archive-item">
+    <header class="archive-header">
+        <div class="container">
+            <span class="category-tag">Archival Document</span>
+            <h1>{{ page.title }}</h1>
+            {% if page.archive_date %}
+            <p class="archive-date">Document Date: {{ page.archive_date }}</p>
+            {% endif %}
+        </div>
+    </header>
+    
+    <div class="archive-content container">
+        {% if page.document_image %}
+        <figure class="document-image">
+            <img src="{{ page.document_image | relative_url }}" alt="{{ page.title }}">
+            {% if page.image_caption %}
+            <figcaption>{{ page.image_caption }}</figcaption>
+            {% endif %}
+        </figure>
+        {% endif %}
+        
+        <aside class="archive-details">
+            <h2>Document Details</h2>
+            <dl>
+                {% if page.source %}
+                <dt>Source</dt>
+                <dd>{{ page.source }}</dd>
+                {% endif %}
+                {% if page.document_type %}
+                <dt>Type</dt>
+                <dd>{{ page.document_type }}</dd>
+                {% endif %}
+                {% if page.collection %}
+                <dt>Collection</dt>
+                <dd>{{ page.collection }}</dd>
+                {% endif %}
+            </dl>
+        </aside>
+        
+        <div class="content-body">
+            {{ content }}
+        </div>
+    </div>
+</article>

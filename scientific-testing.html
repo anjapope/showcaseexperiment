@@ -1,0 +1,70 @@
+---
+layout: page
+title: Scientific Testing
+subtitle: Advanced analytical techniques for ivory identification and provenance research
+permalink: /scientific-testing/
+---
+
+<section class="section">
+    <div class="container">
+        <p class="text-light">Our scientific testing program employs state-of-the-art analytical methods to determine the species, age, and geographic origin of ivory materials. These techniques are crucial for conservation efforts, legal enforcement, and historical research.</p>
+        
+        <h2>Methods & Techniques</h2>
+        
+        <div class="research-grid mt-2">
+            <div class="research-card">
+                <div class="research-card-icon">⚛️</div>
+                <div class="research-card-content">
+                    <h3>Isotopic Analysis</h3>
+                    <p>Stable isotope ratios (carbon, nitrogen, oxygen, strontium) provide information about geographic origin and diet, helping to identify the region where an elephant lived.</p>
+                </div>
+            </div>
+            
+            <div class="research-card">
+                <div class="research-card-icon">🧬</div>
+                <div class="research-card-content">
+                    <h3>DNA Analysis</h3>
+                    <p>Genetic testing can identify species (African vs. Asian elephant, mammoth), population, and even individual elephants through reference databases.</p>
+                </div>
+            </div>
+            
+            <div class="research-card">
+                <div class="research-card-icon">📊</div>
+                <div class="research-card-content">
+                    <h3>Spectroscopy</h3>
+                    <p>Raman and FTIR spectroscopy help distinguish ivory from substitute materials and can provide information about age and treatment history.</p>
+                </div>
+            </div>
+            
+            <div class="research-card">
+                <div class="research-card-icon">🔬</div>
+                <div class="research-card-content">
+                    <h3>Radiocarbon Dating</h3>
+                    <p>Carbon-14 dating determines when an elephant died, distinguishing between antique ivory and recently poached material.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: white;">
+    <div class="container">
+        <h2>Case Studies</h2>
+        
+        <div class="cards-grid">
+            {% for study in site.case_studies %}
+            {% include card.html 
+                title=study.title 
+                url=study.url 
+                excerpt=study.excerpt 
+                date=study.date 
+                category=study.category
+            %}
+            {% endfor %}
+        </div>
+        
+        {% if site.case_studies.size == 0 %}
+        <p class="text-center text-light">Case studies coming soon. Check back for detailed examples of our scientific testing work.</p>
+        {% endif %}
+    </div>
+</section>

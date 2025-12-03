@@ -1,0 +1,78 @@
+---
+layout: page
+title: Oral Histories
+subtitle: Preserving firsthand accounts and traditional knowledge
+permalink: /oral-histories/
+---
+
+<section class="section">
+    <div class="container">
+        <p class="text-light">Oral history is an essential component of our research methodology. By recording conversations with craftspeople, collectors, traders, and communities, we preserve valuable knowledge that might otherwise be lost and gain insights that no document or scientific test can provide.</p>
+        
+        <h2>Why Oral History Matters</h2>
+        
+        <div class="research-grid mt-2">
+            <div class="research-card">
+                <div class="research-card-icon">👥</div>
+                <div class="research-card-content">
+                    <h3>Human Connections</h3>
+                    <p>Objects carry stories. Oral histories reveal the human relationships, emotions, and cultural practices connected to ivory objects.</p>
+                </div>
+            </div>
+            
+            <div class="research-card">
+                <div class="research-card-icon">🔗</div>
+                <div class="research-card-content">
+                    <h3>Provenance Clues</h3>
+                    <p>Personal recollections often contain crucial details about where an object came from, who owned it, and how it traveled through time.</p>
+                </div>
+            </div>
+            
+            <div class="research-card">
+                <div class="research-card-icon">🛠️</div>
+                <div class="research-card-content">
+                    <h3>Craft Knowledge</h3>
+                    <p>Artisans share techniques, traditions, and practices that illuminate how ivory objects were created and used.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: white;">
+    <div class="container">
+        <h2>Interview Archive</h2>
+        
+        <div class="cards-grid">
+            {% for interview in site.interviews %}
+            {% include card.html 
+                title=interview.title 
+                url=interview.url 
+                excerpt=interview.excerpt 
+                date=interview.date 
+                category="Oral History"
+            %}
+            {% endfor %}
+        </div>
+        
+        {% if site.interviews.size == 0 %}
+        <p class="text-center text-light">Interview recordings and transcripts coming soon. We are actively conducting and processing oral history sessions.</p>
+        {% endif %}
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2>Topics We Explore</h2>
+        <div class="topic-tags">
+            <span class="topic-tag">Carving Techniques</span>
+            <span class="topic-tag">Trade Routes</span>
+            <span class="topic-tag">Family Heirlooms</span>
+            <span class="topic-tag">Cultural Significance</span>
+            <span class="topic-tag">Collection History</span>
+            <span class="topic-tag">Conservation Stories</span>
+            <span class="topic-tag">Market Changes</span>
+            <span class="topic-tag">Ethical Perspectives</span>
+        </div>
+    </div>
+</section>
