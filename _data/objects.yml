@@ -1,0 +1,14 @@
+- id: key001
+  title: "Ivory Piano Key"
+  image: "/assets/images/placeholders/placeholder.jpg"
+  description: "A sample ivory key associated with Starr Piano Co."
+  methods:
+    - visual
+    - microscopy
+
+- id: comb001
+  title: "Decorative Ivory Comb"
+  image: "/assets/images/placeholders/placeholder.jpg"
+  description: "A decorative comb illustrating consumer uses of ivory."
+  methods:
+    - visual

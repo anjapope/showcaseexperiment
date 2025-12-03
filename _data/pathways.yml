@@ -1,0 +1,6 @@
+# Pathways configuration file.
+# Currently used to initialize the pathways data structure.
+# Reserved for future branching logic that may define complex
+# investigation flows with conditional steps or decision trees.
+
+pathways: []

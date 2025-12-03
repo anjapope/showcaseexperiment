@@ -1,0 +1,42 @@
+---
+layout: default
+title: Investigation Pathways
+---
+
+<header class="page-header">
+  <h1>Investigation Pathways</h1>
+  <p>Select a method and follow an object through the research process.</p>
+</header>
+
+<section id="method-selection" x-show="!selectedMethod" class="block">
+  <h2>Choose an investigative method</h2>
+  {% include pathway-selector.html %}
+</section>
+
+<section id="object-selection" x-show="selectedMethod && !selectedObject" class="block">
+  <h2 x-text="'Select an object for ' + (selectedMethod ? selectedMethod.title : '')"></h2>
+  <div class="object-grid">
+    <template x-for="object in filteredObjects" :key="object.id">
+      {% include object-card.html %}
+    </template>
+  </div>
+  <button class="back-link" @click="clearMethod">&larr; Back to methods</button>
+</section>
+
+<section id="object-view" x-show="selectedObject" class="block">
+  <h2 x-text="selectedObject.title"></h2>
+  <img class="object-image" :src="selectedObject.image" :alt="selectedObject.title">
+  <p class="object-description" x-text="selectedObject.description"></p>
+
+  <h3 x-text="'Steps in ' + (selectedMethod ? selectedMethod.title : '')"></h3>
+  <div id="steps">
+    <template x-for="step in (selectedMethod ? selectedMethod.steps : [])" :key="step.title">
+      {% include step-card.html %}
+    </template>
+  </div>
+
+  <div class="nav-buttons">
+    <button class="back-link" @click="clearObject">&larr; Choose a different object</button>
+    <button class="back-link" @click="resetAll">Back to start</button>
+  </div>
+</section>
