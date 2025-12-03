@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | {{ site.title }}</title>
+
+    <link rel="stylesheet" href="{{ '/assets/css/reset.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/pathways.css' | relative_url }}">
+
+    <!-- Inject Jekyll data into a global JS object -->
+    <script>
+      window.PATHWAYS_DATA = {
+        objects: {{ site.data.objects | jsonify }},
+        methods: {{ site.data.methods | jsonify }},
+        pathways: {{ site.data.pathways | jsonify }}
+      };
+    </script>
+
+    <!-- App script must load before Alpine.js -->
+    <script src="{{ '/pathways.js' | relative_url }}"></script>
+    <script defer src="{{ '/assets/js/vendor/alpine.min.js' | relative_url }}"></script>
+  </head>
+  <body x-data="pathwaysApp()" x-init="init()">
+    <main>
+      {{ content }}
+    </main>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+- id: visual
+  title: "Visual Inspection"
+  steps:
+    - title: "Assess color and surface texture"
+      description: "Look for a creamy off-white color, hairline cracks, and subtle grain characteristic of ivory."
+    - title: "Identify Schreger lines"
+      description: "Observe the cross-hatched lines visible on cut surfaces of ivory, and note their angle."
+
+- id: microscopy
+  title: "Microscopy"
+  steps:
+    - title: "Examine grain structure"
+      description: "Use magnification to look for the interlacing patterns that distinguish ivory from bone or plastic."
