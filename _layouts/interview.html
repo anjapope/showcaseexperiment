@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<article class="interview">
+    <header class="interview-header">
+        <div class="container">
+            <span class="category-tag">Oral History</span>
+            <h1>{{ page.title }}</h1>
+            {% if page.interviewee %}
+            <p class="interviewee">{{ page.interviewee }}</p>
+            {% endif %}
+            {% if page.date %}
+            <time datetime="{{ page.date | date_to_xmlschema }}">Recorded: {{ page.date | date: "%B %d, %Y" }}</time>
+            {% endif %}
+        </div>
+    </header>
+    
+    <div class="interview-content container">
+        {% if page.audio_file %}
+        <div class="audio-player">
+            <audio controls>
+                <source src="{{ page.audio_file | relative_url }}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        {% endif %}
+        
+        {% if page.topics %}
+        <aside class="topics">
+            <h2>Topics Discussed</h2>
+            <ul class="topic-tags">
+                {% for topic in page.topics %}
+                <li><span class="topic-tag">{{ topic }}</span></li>
+                {% endfor %}
+            </ul>
+        </aside>
+        {% endif %}
+        
+        <div class="content-body transcript">
+            {{ content }}
+        </div>
+        
+        {% if page.location %}
+        <div class="interview-meta">
+            <strong>Location:</strong> {{ page.location }}
+        </div>
+        {% endif %}
+    </div>
+</article>

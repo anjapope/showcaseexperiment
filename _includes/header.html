@@ -1,0 +1,22 @@
+<header class="site-header">
+    <div class="container">
+        <nav class="main-nav">
+            <a href="{{ '/' | relative_url }}" class="logo">
+                <span class="logo-text">Ivory Research</span>
+            </a>
+            
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
+                <li><a href="{{ '/scientific-testing/' | relative_url }}" {% if page.url contains 'scientific-testing' %}class="active"{% endif %}>Scientific Testing</a></li>
+                <li><a href="{{ '/oral-histories/' | relative_url }}" {% if page.url contains 'oral-histories' %}class="active"{% endif %}>Oral Histories</a></li>
+                <li><a href="{{ '/archives/' | relative_url }}" {% if page.url contains 'archives' %}class="active"{% endif %}>Archives</a></li>
+                <li><a href="{{ '/explore/' | relative_url }}" {% if page.url contains 'explore' %}class="active"{% endif %}>Explore</a></li>
+                <li><a href="{{ '/about/' | relative_url }}" {% if page.url contains 'about' %}class="active"{% endif %}>About</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>

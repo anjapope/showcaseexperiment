@@ -1,0 +1,115 @@
+---
+layout: page
+title: Interactive Explorer
+subtitle: Discover connections across our research
+permalink: /explore/
+---
+
+<section class="explorer">
+    <div class="container">
+        <p class="text-light mb-2">Use the filters below to explore our research materials. You can search across all content, filter by research type, or browse specific categories.</p>
+        
+        <div class="filter-controls">
+            <div class="filter-group">
+                <label for="search-input">Search:</label>
+                <input type="text" id="search-input" placeholder="Search all content...">
+            </div>
+            
+            <div class="filter-group">
+                <label for="type-filter">Type:</label>
+                <select id="type-filter">
+                    <option value="all">All Types</option>
+                    <option value="case-study">Case Studies</option>
+                    <option value="interview">Interviews</option>
+                    <option value="archive">Archives</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="scientific">Scientific</button>
+                <button class="filter-btn" data-filter="oral-history">Oral History</button>
+                <button class="filter-btn" data-filter="archival">Archival</button>
+            </div>
+        </div>
+        
+        <p id="results-count" class="text-light mb-1"></p>
+        
+        <div class="cards-grid" id="explore-results">
+            <!-- Case Studies -->
+            {% for study in site.case_studies %}
+            <div class="card" data-category="scientific" data-type="case-study">
+                <div class="card-content">
+                    <span class="card-category">Case Study</span>
+                    <h3><a href="{{ study.url | relative_url }}">{{ study.title }}</a></h3>
+                    <p>{{ study.excerpt | strip_html | truncate: 150 }}</p>
+                    {% if study.date %}
+                    <time datetime="{{ study.date | date_to_xmlschema }}">{{ study.date | date: "%B %d, %Y" }}</time>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+            
+            <!-- Interviews -->
+            {% for interview in site.interviews %}
+            <div class="card" data-category="oral-history" data-type="interview">
+                <div class="card-content">
+                    <span class="card-category">Interview</span>
+                    <h3><a href="{{ interview.url | relative_url }}">{{ interview.title }}</a></h3>
+                    <p>{{ interview.excerpt | strip_html | truncate: 150 }}</p>
+                    {% if interview.date %}
+                    <time datetime="{{ interview.date | date_to_xmlschema }}">{{ interview.date | date: "%B %d, %Y" }}</time>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+            
+            <!-- Archives -->
+            {% for archive in site.archives %}
+            <div class="card" data-category="archival" data-type="archive">
+                <div class="card-content">
+                    <span class="card-category">Archive</span>
+                    <h3><a href="{{ archive.url | relative_url }}">{{ archive.title }}</a></h3>
+                    <p>{{ archive.excerpt | strip_html | truncate: 150 }}</p>
+                    {% if archive.date %}
+                    <time datetime="{{ archive.date | date_to_xmlschema }}">{{ archive.date | date: "%B %d, %Y" }}</time>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+            
+            {% if site.case_studies.size == 0 and site.interviews.size == 0 and site.archives.size == 0 %}
+            <div class="text-center" style="grid-column: 1 / -1;">
+                <p class="text-light">Research content is being added. Check back soon for interactive exploration of our findings!</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: white;">
+    <div class="container">
+        <h2>Research Timeline</h2>
+        <p class="text-light mb-2">Our research journey through time, showing key discoveries and ongoing investigations.</p>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">Ongoing</div>
+                <h3>Active Research Programs</h3>
+                <p>Our team continues to investigate ivory materials using combined scientific, oral history, and archival methods.</p>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">Phase 2</div>
+                <h3>Oral History Collection</h3>
+                <p>Recording interviews with craftspeople, collectors, and community members to preserve firsthand knowledge.</p>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">Phase 1</div>
+                <h3>Scientific Analysis Framework</h3>
+                <p>Establishing protocols for isotopic analysis, DNA testing, and spectroscopic examination of ivory samples.</p>
+            </div>
+        </div>
+    </div>
+</section>

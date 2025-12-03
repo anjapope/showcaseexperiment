@@ -1,0 +1,31 @@
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Ivory Research Showcase</h3>
+                <p>Exploring ivory materials through interdisciplinary research methods including scientific testing, oral history interviews, and archival research.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Research Areas</h3>
+                <ul>
+                    <li><a href="{{ '/scientific-testing/' | relative_url }}">Scientific Testing</a></li>
+                    <li><a href="{{ '/oral-histories/' | relative_url }}">Oral Histories</a></li>
+                    <li><a href="{{ '/archives/' | relative_url }}">Archival Research</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="{{ '/explore/' | relative_url }}">Interactive Explorer</a></li>
+                    <li><a href="{{ '/about/' | relative_url }}">About the Project</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
