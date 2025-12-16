@@ -1,0 +1,100 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: #fafafa;
+  color: #222;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.block {
+  max-width: 960px;
+  margin: 0 auto 40px;
+}
+
+.selector-grid,
+.object-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.selector-button {
+  padding: 15px;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.2s ease;
+}
+
+.selector-button:hover {
+  background: #444;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+  transform: translateY(-1px);
+}
+
+.object-card {
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.object-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+}
+
+.object-card img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.step-card {
+  background: #fff;
+  padding: 16px 20px;
+  margin: 16px 0;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12);
+}
+
+.object-image {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+.object-description {
+  margin-bottom: 20px;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.back-link {
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.back-link:hover {
+  border-color: #888;
+}

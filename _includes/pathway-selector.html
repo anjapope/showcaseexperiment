@@ -1,0 +1,5 @@
+<div class="selector-grid">
+  <template x-for="method in methods" :key="method.id">
+    <button class="selector-button" @click="selectMethod(method.id)" x-text="method.title"></button>
+  </template>
+</div>

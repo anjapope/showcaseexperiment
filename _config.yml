@@ -1,0 +1,12 @@
+title: "Investigation Pathways"
+description: "Archivory investigative pathways interactive exhibit"
+baseurl: ""        # Leave empty for standalone dev repo
+url: ""            # Set later if you have a custom domain
+
+markdown: kramdown
+theme: minima       # Optional; remove if you don't want a theme
+
+collections:
+  # Placeholder if you later want a dedicated collection
+  investigation:
+    output: true
