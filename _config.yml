@@ -1,0 +1,51 @@
+title: "Ivory Research Showcase"
+description: "An interactive showcase exploring ivory materials through scientific testing, oral history, and archival research."
+baseurl: ""
+url: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Collections for organizing research content
+collections:
+  case_studies:
+    output: true
+    permalink: /case-studies/:name/
+  interviews:
+    output: true
+    permalink: /interviews/:name/
+  archives:
+    output: true
+    permalink: /archives/:name/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "case_studies"
+    values:
+      layout: "case-study"
+  - scope:
+      path: ""
+      type: "interviews"
+    values:
+      layout: "interview"
+  - scope:
+      path: ""
+      type: "archives"
+    values:
+      layout: "archive"
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed

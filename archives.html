@@ -1,0 +1,70 @@
+---
+layout: page
+title: Archival Research
+subtitle: Tracing ivory through historical records and documents
+permalink: /archives/
+---
+
+<section class="section">
+    <div class="container">
+        <p class="text-light">Archival research allows us to trace the movement and significance of ivory objects through time. By examining trade records, institutional documents, photographs, and personal papers, we piece together the complex histories of these materials.</p>
+        
+        <h2>Types of Sources</h2>
+        
+        <div class="research-grid mt-2">
+            <div class="research-card">
+                <div class="research-card-icon">📋</div>
+                <div class="research-card-content">
+                    <h3>Trade Records</h3>
+                    <p>Shipping manifests, customs documents, and commercial correspondence reveal patterns of ivory trade across centuries and continents.</p>
+                </div>
+            </div>
+            
+            <div class="research-card">
+                <div class="research-card-icon">🏛️</div>
+                <div class="research-card-content">
+                    <h3>Institutional Archives</h3>
+                    <p>Museums, galleries, and collections maintain acquisition records, exhibition catalogs, and provenance files.</p>
+                </div>
+            </div>
+            
+            <div class="research-card">
+                <div class="research-card-icon">📷</div>
+                <div class="research-card-content">
+                    <h3>Visual Documentation</h3>
+                    <p>Historical photographs, paintings, and illustrations show ivory objects in their original contexts and help track changes over time.</p>
+                </div>
+            </div>
+            
+            <div class="research-card">
+                <div class="research-card-icon">✉️</div>
+                <div class="research-card-content">
+                    <h3>Personal Papers</h3>
+                    <p>Letters, diaries, and family records often contain detailed accounts of ivory objects and their significance to individuals.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: white;">
+    <div class="container">
+        <h2>Archive Highlights</h2>
+        
+        <div class="cards-grid">
+            {% for archive in site.archives %}
+            {% include card.html 
+                title=archive.title 
+                url=archive.url 
+                excerpt=archive.excerpt 
+                date=archive.date 
+                category="Archival Document"
+            %}
+            {% endfor %}
+        </div>
+        
+        {% if site.archives.size == 0 %}
+        <p class="text-center text-light">Archival findings will be published here as our research progresses. Each document helps tell the broader story of ivory's cultural journey.</p>
+        {% endif %}
+    </div>
+</section>

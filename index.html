@@ -1,0 +1,96 @@
+---
+layout: home
+title: Home
+---
+
+<section class="hero">
+    <div class="container">
+        <h1>Ivory Research Showcase</h1>
+        <p>Exploring ivory materials through interdisciplinary research methods including scientific testing, oral history interviews, and archival investigation.</p>
+        <div class="hero-cta">
+            <a href="{{ '/explore/' | relative_url }}" class="btn btn-primary">Explore Research</a>
+            <a href="{{ '/about/' | relative_url }}" class="btn btn-outline">Learn More</a>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <header class="section-header">
+            <h2>Research Approaches</h2>
+            <p>Our team uses multiple methodologies to understand ivory materials, their origins, history, and significance.</p>
+        </header>
+        
+        <div class="research-grid">
+            <div class="research-card">
+                <div class="research-card-icon">🔬</div>
+                <div class="research-card-content">
+                    <h3>Scientific Testing</h3>
+                    <p>Advanced analytical techniques including isotopic analysis, DNA testing, and spectroscopy to determine the species, age, and geographic origin of ivory materials.</p>
+                    <a href="{{ '/scientific-testing/' | relative_url }}" class="link">View Case Studies</a>
+                </div>
+            </div>
+            
+            <div class="research-card">
+                <div class="research-card-icon">🎙️</div>
+                <div class="research-card-content">
+                    <h3>Oral Histories</h3>
+                    <p>Recording and preserving firsthand accounts from craftspeople, collectors, traders, and communities with connections to ivory objects and traditions.</p>
+                    <a href="{{ '/oral-histories/' | relative_url }}" class="link">Explore Interviews</a>
+                </div>
+            </div>
+            
+            <div class="research-card">
+                <div class="research-card-icon">📜</div>
+                <div class="research-card-content">
+                    <h3>Archival Research</h3>
+                    <p>Investigating historical documents, trade records, photographs, and institutional archives to trace the provenance and movement of ivory objects.</p>
+                    <a href="{{ '/archives/' | relative_url }}" class="link">Browse Archives</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: white;">
+    <div class="container">
+        <header class="section-header">
+            <h2>Featured Research</h2>
+            <p>Recent highlights from our ongoing investigations.</p>
+        </header>
+        
+        <div class="cards-grid">
+            {% for study in site.case_studies limit:3 %}
+            {% include card.html 
+                title=study.title 
+                url=study.url 
+                excerpt=study.excerpt 
+                date=study.date 
+                category="Scientific Testing"
+            %}
+            {% endfor %}
+            
+            {% for interview in site.interviews limit:2 %}
+            {% include card.html 
+                title=interview.title 
+                url=interview.url 
+                excerpt=interview.excerpt 
+                date=interview.date 
+                category="Oral History"
+            %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <header class="section-header">
+            <h2>Interactive Explorer</h2>
+            <p>Discover connections across our research through filtering and visualization tools.</p>
+        </header>
+        <div class="text-center">
+            <a href="{{ '/explore/' | relative_url }}" class="btn btn-primary">Launch Explorer</a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,65 @@
+---
+layout: default
+---
+
+<article class="case-study">
+    <header class="case-study-header">
+        <div class="container">
+            <span class="category-tag">{{ page.category | default: 'Scientific Testing' }}</span>
+            <h1>{{ page.title }}</h1>
+            {% if page.date %}
+            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+            {% endif %}
+        </div>
+    </header>
+    
+    <div class="case-study-content container">
+        {% if page.featured_image %}
+        <figure class="featured-image">
+            <img src="{{ page.featured_image | relative_url }}" alt="{{ page.title }}">
+            {% if page.image_caption %}
+            <figcaption>{{ page.image_caption }}</figcaption>
+            {% endif %}
+        </figure>
+        {% endif %}
+        
+        {% if page.key_findings %}
+        <aside class="key-findings">
+            <h2>Key Findings</h2>
+            <ul>
+                {% for finding in page.key_findings %}
+                <li>{{ finding }}</li>
+                {% endfor %}
+            </ul>
+        </aside>
+        {% endif %}
+        
+        <div class="content-body">
+            {{ content }}
+        </div>
+        
+        {% if page.methodology %}
+        <section class="methodology">
+            <h2>Methodology</h2>
+            <p>{{ page.methodology }}</p>
+        </section>
+        {% endif %}
+        
+        {% if page.related %}
+        <section class="related-studies">
+            <h2>Related Research</h2>
+            <div class="related-grid">
+                {% for related_title in page.related %}
+                    {% assign related_study = site.case_studies | where: "title", related_title | first %}
+                    {% if related_study %}
+                    <a href="{{ related_study.url | relative_url }}" class="related-card">
+                        <h3>{{ related_study.title }}</h3>
+                        <p>{{ related_study.excerpt | strip_html | truncate: 100 }}</p>
+                    </a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+    </div>
+</article>
